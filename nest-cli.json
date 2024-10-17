@@ -3,6 +3,18 @@
   "collection": "@nestjs/schematics",
   "sourceRoot": "src",
   "compilerOptions": {
-    "deleteOutDir": true
+    "deleteOutDir": true,
+    "assets": [{
+      "include": "./views",
+      "exclude": "./views/.gitkeep",
+      "outDir": "dist/",
+      "watchAssets": true
+    },{
+      "include": "./public",
+      "exclude": "./public/.gitkeep",
+      "outDir": "dist/",
+      "watchAssets": true
+    }
+    ]
   }
 }
