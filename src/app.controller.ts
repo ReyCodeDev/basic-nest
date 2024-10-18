@@ -9,7 +9,13 @@ export class AppController {
   @Render('index')
   getHello(): object {
     return {
-      message: 'hola',
+      message: this.appService.getHello(),
+    };
+  }
+  @Get('/api')
+  getHelloApi(): object {
+    return {
+      message: this.appService.getHello(),
     };
   }
 }
