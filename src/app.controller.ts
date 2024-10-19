@@ -12,6 +12,13 @@ export class AppController {
       message: this.appService.getHello(),
     };
   }
+  @Get('messages')
+  @Render('messages')
+  getMessages(): object {
+    return {
+      message: this.appService.getHello(),
+    };
+  }
   @Get('/api')
   getHelloApi(): object {
     return {
