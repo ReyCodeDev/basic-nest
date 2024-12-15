@@ -18,7 +18,7 @@ export class WsService implements OnModuleInit {
   private readonly MAIN_EMIT_CHANNEL: string = 'onMessage';
   onModuleInit(): any {
     this.server.on('connection', (socket) => {
-      console.log(socket.id);
+      console.log(`User connected: ${socket.id}`);
     });
   }
 

@@ -1,4 +1,4 @@
-import { Controller, Get, Render } from '@nestjs/common';
+import { Body, Controller, Get, Post, Render } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -7,22 +7,17 @@ export class AppController {
 
   @Get()
   @Render('index')
-  getHello(): object {
+  get(): object {
     return {
       message: this.appService.getHello(),
     };
   }
-  @Get('messages')
-  @Render('messages')
-  getMessages(): object {
+
+  @Post()
+  @Render('index')
+  post(@Body() body: any) {
     return {
-      message: this.appService.getHello(),
-    };
-  }
-  @Get('/api')
-  getHelloApi(): object {
-    return {
-      message: this.appService.getHello(),
+      message: this.appService.getHello(body.message),
     };
   }
 }
