@@ -1,7 +1,10 @@
 extends components/main
 block content
-    p #{message}
     div#messages
+        p.message
+            p.user test
+            p #{message}
+    input(type="text")#textfield
 block js
     script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.0/socket.io.js")
     script(src="/scripts/script.js")
